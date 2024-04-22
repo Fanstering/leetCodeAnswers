@@ -16,7 +16,8 @@ def bubble_sort(list):  # O(n^2)
     for i in range(n):  # 外循环从第二个数开始到最后一个数
         for j in range(n - i - 1):
             if list[j] > list[j + 1]:
-                list[j], list[j + 1] = list[j + 1], list[j]  # 实际上是将一个元组赋值给两个元素，所以不需要额外的交换变量
+                # 实际上是将一个元组赋值给两个元素，所以不需要额外的交换变量
+                list[j], list[j + 1] = list[j + 1], list[j]
     return list
 
 
@@ -194,6 +195,7 @@ def heapify(arr, n, i):
         arr[i], arr[largest] = arr[largest], arr[i]
         heapify(arr, n, largest)
 
+
 def heap_sort(arr):
     n = len(arr)
 
@@ -227,5 +229,3 @@ if __name__ == "__main__":
     # print(counting_sort(tlist))
     # print(bucket_sort(tlist))
     print(heap_sort(tlist))
-    
-
